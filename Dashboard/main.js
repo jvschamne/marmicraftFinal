@@ -1,6 +1,6 @@
 async function loadRestaurantes() {
     console.log("okok")
-    const response = await fetch('/db/restaurantes.json');
+    const response = await fetch('../db/restaurantes.json');
     const restaurantes = await response.json();
     console.log(restaurantes);
     loadMarmitas(restaurantes)
@@ -8,7 +8,7 @@ async function loadRestaurantes() {
 
 async function loadMarmitas(restaurantes) {
     console.log("okok")
-    const response = await fetch('/db/marmitas.json');
+    const response = await fetch('../db/marmitas.json');
     const marmitas = await response.json();
     console.log(marmitas);
     main(restaurantes, marmitas)
@@ -24,7 +24,29 @@ loadRestaurantes();
 
 function main(infoRestaurantes, marmitas) {
     console.log(marmitas)
+    marmitas = [
+        ["#r1", "Churrasic Park", 4.3, "churrasic.jpg", 6.8],
+        ["#r2", "Crazy Dogs", 4.5, "crazydogs.png", 3.3],
+        ["#r3", "Marmitaria", 4.6, "marmitaria.png", 2.1],
+        ["#r4", "Marmitex", 4.2, "marmitex.png", 1.2],
+        ["#r5", "Wesley Salgadao", 4.9, "crazydogs.png", 1.4],
+        ["#r6", "Dougras Lanches", 4.9, "restaurante.jpg", 5.3],
+        ["#r7", "Strondas Churros", 4.3, "Food_PNG.png", 4.2],
+        ["#r8", "Orra Bitcho", 3.9, "crazydogs.png", 3.4]
+    ]
 
+    infoRestaurantes = [
+        ["#r1", "Churrassic Park", [
+            ["#opcao1", "Personalizar marmita", 17.00, "Monte sua marmita", "../Dashboard/marmitas/m1.jpg"],
+            ["#opcao2", "Opção 1", 17.00, "Arroz, feijão, bife, batata frita e legumes cozidos;", "../Dashboard/marmitas/m1.jpg"],
+            ["#opcao3", "Opção 2", 21.00, "Frango, batata doce, macarrão, arroz e brócolis;", "../Dashboard/marmitas/m1.jpg"]
+        ]],
+        ["#r2", "Dougras Lanches", [
+            ["#opcao4", "Personalizar marmita", 17.00, "Monte sua marmita", "../Dashboard/marmitas/m1.jpg"],
+            ["#opcao5", "Opção 1", 17.00, "Arroz, feijão, bife, batata frita e legumes cozidos;", "../Dashboard/marmitas/m1.jpg"],
+            ["#opcao6", "Opção 2", 21.00, "Frango, batata doce, macarrão, arroz e brócolis;", "../Dashboard/marmitas/m1.jpg"]
+        ]]
+    ]
 
     let cardsRestaurantes = document.getElementById("cardsRestaurantes")
 
